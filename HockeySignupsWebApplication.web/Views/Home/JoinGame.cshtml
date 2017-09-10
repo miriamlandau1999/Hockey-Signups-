@@ -1,0 +1,28 @@
+﻿@using HockeySignupsWebApplication.web.Models;
+@model JoinGameView
+
+@if(Model.game.Date < DateTime.Now)
+{
+    <h1>Sorry no game was scheduled yet. Please check back later</h1>
+}
+else if (Model.PlayersJoined >= Model.game.MaxPlayers)
+{
+    <h1>Sorry the game is full. Try back another week</h1>
+}
+else
+{
+    <form method="post" action="AddPlayer">
+        <input type="text" placeholder="First Name" name="FirstName" class="form-control firstName" value="@Model.player.FirstName"  />
+        <br />
+        <input type="text" placeholder="Last Name" name="LastName" class="form-control lastName" value="@Model.player.LastName"/>
+        <br />
+        <input type="text" placeholder="Email Address" name="Email" class="form-control email" value="@Model.player.Email" />
+        <br />
+        <input value="@Model.game.Id" name="GameId" hidden />
+        <br />
+        <button class="btn btn-primary signUp" disabled>Sign Up</button>
+    </form>
+}
+@section scripts{
+    <script src="~/Content/JavaScript.js"></script>
+    }

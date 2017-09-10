@@ -1,0 +1,13 @@
+﻿<form action="AddGame" method="post">
+    <p>Date</p>
+    <input  class="form-control date" type="date" name="Date" />
+    <br />
+    <p>Set a max of players for this game:</p>
+    <input type="number" min="10" max="30" name="MaxPlayers" class="form-control maxPlayers"/>
+    <br />
+    <button class="btn btn-primary submit" disabled>Submit</button>
+</form>
+@section scripts{
+    <script src="~/Content/JavaScript.js"></script>
+    }
+

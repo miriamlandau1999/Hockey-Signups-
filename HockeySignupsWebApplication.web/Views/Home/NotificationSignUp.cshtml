@@ -1,0 +1,18 @@
+﻿@using HockeySignupsWebApplication.web.Models
+@model NotificationSignUpView
+
+
+
+    <form method="post" action="AddSignUp">
+        <input type="text" placeholder="First Name" name="FirstName" class="form-control firstName " value="@Model.SignUp.FirstName" />
+        <br />
+        <input type="text" placeholder="Last Name" name="LastName" class="form-control lastName" value="@Model.SignUp.LastName" />
+        <br />
+        <input type="text" placeholder="Email Address" name="Email" class="form-control email" value="@Model.SignUp.Email" />
+        <br />
+        <button class="btn btn-primary signUp">Sign Up</button>
+    </form>
+
+@section scripts{
+    <script src="~/Content/JavaScript.js"></script>
+    }
